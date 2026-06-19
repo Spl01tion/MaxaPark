@@ -84,6 +84,13 @@ function controlo_login(){
         redirect("login");
       }
 }
+function controlo_admin(){
+    // Exige sessao iniciada e perfil de administrador
+    controlo_login();
+    if(user('role') !== 'admin'){
+        redirect("home");
+    }
+}
 function str_to_url($url)
 {
 

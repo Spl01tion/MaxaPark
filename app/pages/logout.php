@@ -1,5 +1,7 @@
 <?php
-if(!empty($_SESSION['USER']))
-    unset($_SESSION['USER']);
+// Termina a sessao do utilizador (funcionario ou administrador)
+$_SESSION = [];
+session_unset();
+session_destroy();
 
 redirect('login');

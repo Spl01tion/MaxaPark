@@ -1,5 +1,6 @@
 <?php
-//controlo_login();
+// Exige sessao iniciada (funcionario ou administrador)
+controlo_login();
 
 $section = $url[1] ?? 'homedash';
 $action = $url[2] ?? 'view';
@@ -256,13 +257,12 @@ if (!file_exists($filename)) {
             <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="<?=get_image(user('image'))?>" alt="mdo" style="object-fit: cover;" width="32" height="32" class="rounded-circle">
             </a>
-            <ul class="dropdown-menu text-small">
-              <li><a class="dropdown-item" href="#">Perfil</a></li>
-              <li><a class="dropdown-item" href="<?= ROOT ?>/admin">Admin Panel</a></li>
-              <li><a class="dropdown-item" href="#">Definições</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
+            <ul class="dropdown-menu dropdown-menu-end text-small">
+              <li><span class="dropdown-item-text fw-semibold"><?= htmlspecialchars(user('nome')) ?> <?= htmlspecialchars(user('apelido')) ?></span></li>
+              <li><hr class="dropdown-divider"></li>
+              <?php if(user('role') === 'admin'): ?>
+                <li><a class="dropdown-item" href="<?= ROOT ?>/admin">Admin Panel</a></li>
+              <?php endif; ?>
               <li><a class="dropdown-item" href="<?= ROOT ?>/logout">Logout</a></li>
             </ul>
           </div>

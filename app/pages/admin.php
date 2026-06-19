@@ -1,10 +1,8 @@
 <?php
 
-//controlo_login();
+// Apenas administradores autenticados podem aceder ao painel de administracao
+controlo_admin();
 
-// if ($_SESSION['user_role'] == 'user') {
-//   redirect('home');
-// }
 $section = $url[1] ?? 'dashboard';
 $action = $url[2] ?? 'view';
 $id_user    = $url[3] ?? 0;
