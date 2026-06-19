@@ -1,0 +1,205 @@
+/* ============================================================
+   MaxaPark — Tema visual partilhado
+   Cor da marca: #9C1980
+   ============================================================ */
+
+:root {
+	--maxa: #9C1980;
+	--maxa-dark: #7a1465;
+	--maxa-darker: #5e0f4e;
+	--maxa-soft: #f6eaf3;
+	--maxa-grad: linear-gradient(135deg, #9C1980 0%, #5e0f4e 100%);
+
+	--bs-primary: #9C1980;
+	--bs-primary-rgb: 156, 25, 128;
+	--bs-link-color: #9C1980;
+	--bs-link-color-rgb: 156, 25, 128;
+	--bs-link-hover-color: #7a1465;
+}
+
+body {
+	font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	background-color: #f4f5f7;
+	color: #2b2b33;
+}
+
+/* ---------- Botões ---------- */
+.btn-primary {
+	--bs-btn-bg: var(--maxa);
+	--bs-btn-border-color: var(--maxa);
+	--bs-btn-hover-bg: var(--maxa-dark);
+	--bs-btn-hover-border-color: var(--maxa-dark);
+	--bs-btn-active-bg: var(--maxa-darker);
+	--bs-btn-active-border-color: var(--maxa-darker);
+	--bs-btn-disabled-bg: var(--maxa);
+	--bs-btn-disabled-border-color: var(--maxa);
+}
+
+.btn-outline-primary {
+	--bs-btn-color: var(--maxa);
+	--bs-btn-border-color: var(--maxa);
+	--bs-btn-hover-bg: var(--maxa);
+	--bs-btn-hover-border-color: var(--maxa);
+	--bs-btn-active-bg: var(--maxa-dark);
+	--bs-btn-active-border-color: var(--maxa-dark);
+}
+
+.btn {
+	border-radius: .55rem;
+	font-weight: 500;
+}
+
+/* ---------- Cores utilitárias da marca ---------- */
+.text-primary { color: var(--maxa) !important; }
+.bg-primary { background-color: var(--maxa) !important; }
+.text-bg-primary { background-color: var(--maxa) !important; color: #fff !important; }
+.badge.bg-primary { background-color: var(--maxa) !important; }
+.text-maxa { color: var(--maxa) !important; }
+.bg-maxa { background: var(--maxa-grad) !important; color: #fff; }
+
+a { text-decoration: none; }
+
+/* ---------- Cartões ---------- */
+.card {
+	border: 1px solid rgba(0, 0, 0, .05);
+	border-radius: .9rem;
+	box-shadow: 0 2px 10px rgba(40, 10, 35, .05);
+	transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.card.lift:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 24px rgba(94, 15, 78, .14);
+}
+
+.card .card-body h6 { opacity: .85; }
+
+/* ---------- Tabelas ---------- */
+.table {
+	--bs-table-hover-bg: var(--maxa-soft);
+	vertical-align: middle;
+}
+
+.table > thead th {
+	text-transform: uppercase;
+	font-size: .72rem;
+	letter-spacing: .04em;
+	color: #6b6b76;
+	border-bottom: 2px solid var(--maxa-soft);
+}
+
+.table-responsive {
+	background: #fff;
+	border-radius: .9rem;
+	padding: .25rem .75rem;
+	box-shadow: 0 2px 10px rgba(40, 10, 35, .05);
+}
+
+/* ---------- Formulários ---------- */
+.form-control:focus,
+.form-select:focus {
+	border-color: var(--maxa);
+	box-shadow: 0 0 0 .2rem rgba(156, 25, 128, .15);
+}
+
+/* ---------- Header (área home/funcionário) ---------- */
+header.maxa-header {
+	background: #fff;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+	border: 0 !important;
+}
+
+.maxa-nav .nav-link {
+	color: #4a4a55;
+	border-radius: .6rem;
+	padding: .4rem .7rem;
+	margin: 0 .1rem;
+	transition: background .15s ease, color .15s ease;
+}
+
+.maxa-nav .nav-link:hover {
+	background: var(--maxa-soft);
+	color: var(--maxa-dark);
+}
+
+.maxa-nav .nav-link.active {
+	background: var(--maxa);
+	color: #fff;
+}
+
+.maxa-brand {
+	color: var(--maxa) !important;
+	font-weight: 700;
+	letter-spacing: .3px;
+}
+
+/* ---------- Sidebar (admin) ---------- */
+.sidebar {
+	background: #fff !important;
+}
+
+.sidebar .nav-link {
+	border-radius: .6rem;
+	margin: .12rem .5rem;
+	padding: .55rem .8rem;
+	color: #41414c !important;
+	transition: background .15s ease, color .15s ease;
+}
+
+.sidebar .nav-link:hover {
+	background: var(--maxa-soft);
+	color: var(--maxa-dark) !important;
+}
+
+.sidebar .nav-link.active {
+	background: var(--maxa-grad);
+	color: #fff !important;
+}
+
+.sidebar .nav-link.active i,
+.sidebar .nav-link.active .bi { color: #fff !important; }
+
+/* ---------- Cabeçalho de página admin ---------- */
+.navbar.maxa-topbar {
+	background: var(--maxa-grad) !important;
+}
+
+/* ---------- Login ---------- */
+.maxa-login-wrap {
+	min-height: 100vh;
+	background: var(--maxa-grad);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+}
+
+.maxa-login-card {
+	background: #fff;
+	border-radius: 1.1rem;
+	padding: 2.5rem 2rem;
+	width: 100%;
+	max-width: 380px;
+	box-shadow: 0 18px 50px rgba(0, 0, 0, .3);
+}
+
+/* ---------- Painel de vagas ---------- */
+.painel-vaga {
+	background: linear-gradient(160deg, #198754, #136c43);
+	color: #fff;
+	border-radius: .8rem;
+	padding: .8rem .4rem;
+	text-align: center;
+	box-shadow: 0 4px 10px rgba(19, 108, 67, .25);
+}
+
+.painel-status-aberto { background: linear-gradient(135deg, #198754, #0f5132); }
+.painel-status-fechado { background: linear-gradient(135deg, #dc3545, #842029); }
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-thumb {
+	background: var(--maxa);
+	border-radius: 6px;
+}
+::-webkit-scrollbar-track { background: #ececf1; }

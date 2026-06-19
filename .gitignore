@@ -1,0 +1,19 @@
+# Artefactos do gerador de QRCode (debug)
+app/core/qrcode/*-errors.txt
+app/core/qrcode/*.png
+
+# Ficheiros enviados/gerados em runtime (dados pessoais/PII — não versionar)
+public/uploads/*
+!public/uploads/bi_utente/
+public/uploads/bi_utente/*
+!public/uploads/bi_utente/.gitkeep
+
+# Ficheiros de teste temporários
+public/_t.php
+app/pages/teste.php
+
+# IDE / Sistema operativo
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
